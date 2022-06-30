@@ -1,15 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lampada</title>
+    <style>
+        h1{
+            font-family: Arial;
+            background-color: cornflowerblue;
+            text-align: center;
+            padding: 20px;
+        }
+        #corpo{
+            position:absolute;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            margin-top: 22px;
+        }
+        .b1{
+            width: 80%;
+            background-color: dodgerblue;
+            padding: 15px;
+            border-radius: 10px;
+            cursor: pointer;
+            outline: none;
+            color: white;
+            font-size: 15px;
+        }
+        .b1:hover{
+            color: black;
+            background-color: darkturquoise;
+        }
+    </style>
 </head>
+
 <body>
     <h1>Acender e Apagar a Lampada</h1>
-    <img id="lampadadesligada"  src="./l2.png"">
-    <button onclick="document.getElementById('lampadadesligada').src='l1.png'">Acender</button>
-    <button onclick="document.getElementById('lampadadesligada').src='l2.png'" >Apagar</button>
+    <div id="corpo" >
+        <img id="lampadadesligada" src="./l2.png""><br><br>
+    <button id="acender" class="b1" onclick="acender()">Acender</button>
+    <button id="apagar" class="b1" onclick="apagar()" >Apagar</button>
+    </div>
+    <script>
+        function acender(){
+            var lampada = document.getElementById('lampadadesligada');
+            lampada.src = "l1.png";
+        }
+        function apagar(){
+            var lampada = document.getElementById('lampadadesligada');
+            lampada.src = "l2.png";
+        }
+    </script>
 </body>
 </html>
